@@ -35,7 +35,11 @@ pipeline {
                     branch: 'main'
             }
         }
-
+        stage('Check Parameters') {
+            steps {
+               echo "Selected Maven goal: ${params.GOAL}"
+               }
+        }
         stage('Build the code') {
             steps {
                 sh '"$MVN" ${params.GOAL}'
