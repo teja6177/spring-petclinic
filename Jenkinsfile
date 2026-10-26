@@ -42,7 +42,7 @@ pipeline {
         }
         stage('Build the code') {
             steps {
-                sh '"$MVN" ${params.GOAL}'
+                sh "mvn ${params.GOAL}"
             }
         }
 
